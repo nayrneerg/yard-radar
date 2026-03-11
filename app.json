@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Yard Radar",
+    "slug": "yard-radar",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "yard-radar",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yardradar.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Yard Radar needs your location to show nearby yard sales on the map.",
+        "NSLocationAlwaysUsageDescription": "Yard Radar needs your location to notify you about nearby yard sales.",
+        "NSCameraUsageDescription": "Yard Radar needs camera access to add photos to your yard sale listings.",
+        "NSPhotoLibraryUsageDescription": "Yard Radar needs photo library access to add photos to your yard sale listings."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.yardradar.app",
+      "permissions": ["ACCESS_FINE_LOCATION","ACCESS_COARSE_LOCATION","CAMERA","READ_EXTERNAL_STORAGE","WRITE_EXTERNAL_STORAGE"]
+    },
+    "web": { "favicon": "./assets/favicon.png", "bundler": "metro" },
+    "plugins": [
+      "expo-router",
+      ["expo-location", { "locationAlwaysAndWhenInUsePermission": "Allow Yard Radar to use your location to show nearby yard sales." }],
+      ["@rnmapbox/maps", { "RNMapboxMapsDownloadToken": "<your-mapbox-download-token>" }]
+    ],
+    "experiments": { "typedRoutes": true },
+    "extra": { "router": { "origin": false }, "eas": { "projectId": "<your-eas-project-id>" } }
+  }
+}
