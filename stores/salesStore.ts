@@ -1,10 +1,13 @@
 import { create } from 'zustand';
-import { Sale, SaleFilters, SaleCategory } from '@/types';
+import { Sale, SaleFilters } from '@/types';
 
 interface SalesState {
-  nearbySales: Sale[]; selectedSale: Sale | null; filters: SaleFilters;
-  userLocation: { latitude: number; longitude: number; } | null;
-  setNearbySales: (sales: Sale[]) => void; setSelectedSale: (sale: Sale | null) => void;
+  nearbySales: Sale[];
+  selectedSale: Sale | null;
+  filters: SaleFilters;
+  userLocation: { latitude: number; longitude: number } | null;
+  setNearbySales: (sales: Sale[]) => void;
+  setSelectedSale: (sale: Sale | null) => void;
   setFilters: (filters: Partial<SaleFilters>) => void;
   setUserLocation: (location: { latitude: number; longitude: number } | null) => void;
   resetFilters: () => void;
