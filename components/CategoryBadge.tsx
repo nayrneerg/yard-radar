@@ -5,23 +5,21 @@ import { SaleCategory } from '@/types';
 import { getCategoryInfo } from '@/constants/categories';
 import { theme } from '@/constants/theme';
 
-interface CategoryBadgeProps { category: SaleCategory; size?: 'small' | 'medium'; }
+interface Props { category: SaleCategory; size?: 'small' | 'medium'; }
 
-const CategoryBadge: React.FC<CategoryBadgeProps> = ({ category, size = 'small' }) => {
+const CategoryBadge: React.FC<Props> = ({ category, size = 'small' }) => {
   const info = getCategoryInfo(category);
   return (
-    <View style={[styles.badge, { backgroundColor: `${info.color}20` }, size === 'small' ? styles.badgeSmall : styles.badgeMedium]}>
-      <Text style={[styles.text, { color: info.color }, size === 'small' ? styles.textSmall : styles.textMedium]}>{info.label}</Text>
+    <View style={[styles.badge, { backgroundColor: `${info.color}20` }, size === 'medium' && styles.medium]}>
+      <Text style={[styles.text, { color: info.color }, size === 'medium' && styles.textMedium]}>{info.label}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  badge: { borderRadius: theme.borderRadius.md, paddingHorizontal: theme.spacing.sm, paddingVertical: theme.spacing.xs, alignSelf: 'flex-start' },
-  badgeSmall: { paddingHorizontal: theme.spacing.sm, paddingVertical: 4 },
-  badgeMedium: { paddingHorizontal: theme.spacing.md, paddingVertical: theme.spacing.xs },
-  text: { fontWeight: theme.fonts.weights.semibold },
-  textSmall: { fontSize: theme.fonts.sizes.xs },
+  badge: { borderRadius: theme.borderRadius.md, paddingHorizontal: theme.spacing.sm, paddingVertical: 4, alignSelf: 'flex-start' },
+  medium: { paddingHorizontal: theme.spacing.md, paddingVertical: theme.spacing.xs },
+  text: { fontSize: theme.fonts.sizes.xs, fontWeight: theme.fonts.weights.semibold },
   textMedium: { fontSize: theme.fonts.sizes.sm },
 });
 
