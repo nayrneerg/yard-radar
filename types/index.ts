@@ -23,13 +23,6 @@ export interface Location {
   zip?: string;
 }
 
-export interface User {
-  id: string;
-  email: string;
-  created_at: string;
-  updated_at: string;
-}
-
 export interface Profile {
   id: string;
   user_id: string;
@@ -60,29 +53,8 @@ export interface Sale {
   host?: Profile;
 }
 
-export interface SaleImage {
-  id: string;
-  sale_id: string;
-  url: string;
-  order: number;
-  created_at: string;
-}
-
 export interface SaleFilters {
   categories: SaleCategory[];
   maxDistance: number;
-  dateRange: { start?: Date; end?: Date; };
-}
-
-export interface UserLocation {
-  coords: {
-    latitude: number;
-    longitude: number;
-    accuracy: number | null;
-    altitude: number | null;
-    altitudeAccuracy: number | null;
-    heading: number | null;
-    speed: number | null;
-  };
-  timestamp: number;
+  dateRange: { start?: Date; end?: Date };
 }
