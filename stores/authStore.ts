@@ -3,10 +3,16 @@ import { User, Session } from '@supabase/supabase-js';
 import { Profile } from '@/types';
 
 interface AuthState {
-  user: User | null; session: Session | null; profile: Profile | null;
-  isLoading: boolean; isAuthenticated: boolean;
-  setUser: (user: User | null) => void; setSession: (session: Session | null) => void;
-  setProfile: (profile: Profile | null) => void; setLoading: (loading: boolean) => void; reset: () => void;
+  user: User | null;
+  session: Session | null;
+  profile: Profile | null;
+  isLoading: boolean;
+  isAuthenticated: boolean;
+  setUser: (user: User | null) => void;
+  setSession: (session: Session | null) => void;
+  setProfile: (profile: Profile | null) => void;
+  setLoading: (loading: boolean) => void;
+  reset: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
