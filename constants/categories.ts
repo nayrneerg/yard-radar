@@ -11,6 +11,5 @@ export const SALE_CATEGORIES = [
   { value: SaleCategory.Other, label: 'Other', icon: 'dots-horizontal-circle', color: '#808080' },
 ] as const;
 
-export const getCategoryInfo = (category: SaleCategory) => {
-  return SALE_CATEGORIES.find(c => c.value === category) || SALE_CATEGORIES[SALE_CATEGORIES.length - 1];
-};
+export const getCategoryInfo = (category: SaleCategory) =>
+  SALE_CATEGORIES.find(c => c.value === category) ?? SALE_CATEGORIES[SALE_CATEGORIES.length - 1];
