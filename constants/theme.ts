@@ -1,20 +1,16 @@
 export const theme = {
   colors: {
     primary: '#6200EE', primaryDark: '#3700B3', primaryLight: '#BB86FC',
-    secondary: '#03DAC6', secondaryDark: '#018786',
-    background: '#FFFFFF', surface: '#FFFFFF',
-    error: '#B00020', onPrimary: '#FFFFFF', onSecondary: '#000000',
-    onBackground: '#000000', onSurface: '#000000', onError: '#FFFFFF',
-    text: '#000000', textSecondary: '#666666', border: '#E0E0E0',
-    disabled: '#CCCCCC', placeholder: '#999999',
+    secondary: '#03DAC6', background: '#FFFFFF', surface: '#FFFFFF',
+    error: '#B00020', text: '#000000', textSecondary: '#666666',
+    border: '#E0E0E0', disabled: '#CCCCCC', placeholder: '#999999',
     success: '#4CAF50', warning: '#FF9800', info: '#2196F3',
     mapPin: '#FF5722', mapPinSelected: '#E91E63',
   },
   spacing: { xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48 },
   borderRadius: { sm: 4, md: 8, lg: 12, xl: 16, round: 999 },
   fonts: {
-    regular: 'System', medium: 'System', bold: 'System',
-    sizes: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20, xxl: 24, title: 28, hero: 34 },
+    sizes: { xs: 12, sm: 14, md: 16, lg: 18, xl: 20, xxl: 24, title: 28 },
     weights: { regular: '400' as const, medium: '500' as const, semibold: '600' as const, bold: '700' as const },
   },
   shadows: {
@@ -23,5 +19,3 @@ export const theme = {
     lg: { shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8, elevation: 8 },
   },
 } as const;
-
-export type Theme = typeof theme;
